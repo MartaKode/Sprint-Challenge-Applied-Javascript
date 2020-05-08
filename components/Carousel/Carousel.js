@@ -50,7 +50,7 @@ function makeCarousel() {
 
   document.querySelector('.carousel-container').appendChild(carousel)
 
-  document.querySelector('.carousel-container img').style.display = 'block'
+ // document.querySelector('.carousel-container img').style.display = 'block'
 
   const allCarouselImgs = document.querySelectorAll('.carousel-container img')
   const allCarouselimgsArray = Array.from(allCarouselImgs)
@@ -64,28 +64,41 @@ function makeCarousel() {
   //Left button is working!!!
   leftBtn.addEventListener('click', event => {
     for(let i=0; i<allCarouselimgsArray.length; i++){
-      if(allCarouselimgsArray[i].style.display !== 'block' && allCarouselimgsArray[i+1].style.display !=='none'){
-        allCarouselimgsArray[i].style.display = 'block'
-        allCarouselimgsArray[i+1].style.display ='none'
-      }else if(allCarouselimgsArray[i].style.display !== 'none' && allCarouselimgsArray[i+1].style.display !=='block'){
-        allCarouselimgsArray[i].style.display = 'none'
-        allCarouselimgsArray[i+1].style.display ='block'
+      if(i>=allCarouselimgsArray.length){
+        i--
+      }else if(i<=0){
+        i++
       }
+      if(allCarouselimgsArray[i].style.display !== 'block' && allCarouselimgsArray[i-1].style.display !=='none'){
+        allCarouselimgsArray[i].style.display = 'block'
+        allCarouselimgsArray[i-1].style.display ='none'
+      }else if(allCarouselimgsArray[i].style.display !== 'none' && allCarouselimgsArray[i-1].style.display !=='block'){
+        allCarouselimgsArray[i].style.display = 'none'
+        allCarouselimgsArray[i-1].style.display ='block'
+      }
+  
     }
 
   })
 
   //Right button needs work! :(
     rightBtn.addEventListener('click', event => {
-      for(let i=0; i<allCarouselimgsArray.length; i++){
-        if(allCarouselimgsArray[i].style.display !== 'block' && allCarouselimgsArray[i+1].style.display !=='none'){
+      for(let i=3; i>0; i--){
+        // if(i<0){
+        //   i++
+        // }else if(i>=allCarouselimgsArray.length){
+        //   i--
+        // }
+        if(allCarouselimgsArray[i].style.display !== 'block' && allCarouselimgsArray[i-1].style.display !=='none'){
           allCarouselimgsArray[i].style.display = 'block'
-          allCarouselimgsArray[i+1].style.display ='none'
-        }else if(allCarouselimgsArray[i].style.display !== 'none' && allCarouselimgsArray[i+1].style.display !=='block'){
+          allCarouselimgsArray[i-1].style.display ='none'
+        }else if(allCarouselimgsArray[i].style.display !== 'none' && allCarouselimgsArray[i-1].style.display !=='block'){
           allCarouselimgsArray[i].style.display = 'none'
-          allCarouselimgsArray[i+1].style.display ='block'
+          allCarouselimgsArray[i-1].style.display ='block'
         }
       }
+
+     
   
     })
 
