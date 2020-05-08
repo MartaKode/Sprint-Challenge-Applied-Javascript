@@ -52,21 +52,160 @@ function makeCarousel() {
 
   document.querySelector('.carousel-container img').style.display = 'block'
 
+  const allCarouselImgs = document.querySelectorAll('.carousel-container img')
+  const allCarouselimgsArray = Array.from(allCarouselImgs)
+  const rightBtn = document.querySelector('.right-button')
+  const leftBtn = document.querySelector('.left-button')
+
+//document.querySelectorAll('.carousel-container img').forEach( element => element.style.display = 'block')
+
+  rightBtn.addEventListener('click', event => {
+    for(let i=0; i<allCarouselimgsArray.length; i++){
+      if(allCarouselimgsArray[i].style.display !== 'block'){
+        allCarouselimgsArray[i].style.display = 'block'
+      }else if(allCarouselimgsArray[i].style.display !== 'none'){
+        allCarouselimgsArray[i].style.display = 'none'
+      }
+    }
+
+  })
+
+  leftBtn.addEventListener('click', event => {
+    for(let i=0; i<allCarouselimgsArray.length; i++){
+      if(allCarouselimgsArray[i].style.display !== 'block'){
+        allCarouselimgsArray[i].style.display = 'block'
+      }else if(allCarouselimgsArray[i].style.display !== 'none'){
+        allCarouselimgsArray[i].style.display = 'none'
+      }
+    }
+
+  })
 
 
-  // document.querySelector('.left-button').addEventListener('mouseover', event => {
-  //   document.querySelector('.carousel-container img').style.display = 'block'
-  // })
-  // document.querySelector('.right-button').addEventListener('mouseover', event => {
-  //   document.querySelector('.carousel-container img').style.display = 'block'
-  // })
 
-//console.log(carousel)
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  //console.log(carousel)
 }
 
 makeCarousel()
 
-// function fetchCarouselPics(){
 
 
-// }
+// -------------🍝Spaghetti🍝Code: ---------------
+
+
+
+  // function whenClicked(buttonClicked) {
+  //   var index = 0
+    
+
+  //   if (buttonClicked === '<') {
+  //     allCarouselImgsArray[index].style.display = 'none'
+  //     allCarouselImgsArray[index +2].style.display = 'block'
+  //     index--
+  //   } else if (buttonClicked === '>') {
+  //     allCarouselimsArray[index].style.display = 'none'
+  //     allCarouselimsArray[index + 1].style.display = 'block'
+  //     index++
+  //   }
+  //   if (index < 0 || index > allCarouselimsArray.length - 1) {
+  //     index = 0
+      
+  //   }
+
+
+
+  // }
+
+ 
+  //   leftBtn.addEventListener("click", event => {
+  //     whenClicked("<")
+  //     //document.querySelector('.carousel-container img:nth-child(2)').style.display = 'none'
+  //     //   document.querySelector('.carousel-container img:nth-child(3)').style.display = 'block'
+  //   })
+  //   rightBtn.addEventListener("click", event => {
+  //     whenClicked(">")
+  //   })
+
+// for(let i=0; i<allCarouselImgsArray.length; i++){
+//   if(i+1<allCarouselImgsArray.length){
+//     allCarouselImgsArray[i].style.display = 'none'
+//       allCarouselImgsArray[i+1].style.display = 'block'
+//   }
+
+
+
+
+
+  // document.querySelector('.right-button').addEventListener('mouseover', event => {
+  //   document.querySelector('.carousel-container img').style.display = 'block'
+  // })
+
+
+    //   function init(){
+
+  //   const images = Array.from(allCarouselImgs)
+
+  //     const rightBtn = document.querySelector('.right-button')
+  //     const leftBtn = document.querySelector('.left-button')
+
+  //     function processClicks(action) {
+  //       const arrayIndex = 0
+
+  //       const myImg = document.getElementsByClassName('.carousel-container img')
+
+  //       if (action == "<")
+  //       arrayIndex-=1;
+  //       else if (action == ">")
+  //       arrayIndex++;
+  //       if (arrayIndex < 0 || arrayIndex > images.length-1)
+  //       arrayIndex = 0;
+  //       myImg.src = images[arrayIndex];
+  //       }
+
+  //     if (leftBtn.addEventListener) {
+  //       leftBtn.addEventListener("click", function () {
+  //       processClicks("<")
+  //       }, false);
+  //       rightBtn.addEventListener("click", function () {
+  //       processClicks(">")
+  //       }, false);
+  //       }
+  //       else if (leftBtn.attachEvent) {
+  //       leftBtn.attachEvent("onclick", function () {
+  //       processClicks("back")
+  //       });
+  //       rightBtn.attachEvent("onclick", function () {
+  //       processClicks(">")
+  //       });
+  //       }
+
+  //   }
+  // init()
+
+
+  // document.querySelector('.left-button').addEventListener('click', event => {
+  //   document.querySelector('.carousel-container img:nth-child(2)').style.display = 'none'
+  //   document.querySelector('.carousel-container img:nth-child(3)').style.display = 'block'
+  // })
+
+  // document.querySelector('.left-button').addEventListener('click', event => {  
+
+  // allCarouselImgsArray[i].style.display = 'none'
+  //   allCarouselImgsArray[i+1].style.display = 'block'
+
+  //   allImgs
+
+  // })
