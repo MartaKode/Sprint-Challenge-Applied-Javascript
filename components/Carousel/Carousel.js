@@ -59,40 +59,35 @@ function makeCarousel() {
 
 //document.querySelectorAll('.carousel-container img').forEach( element => element.style.display = 'block')
 
-  rightBtn.addEventListener('click', event => {
-    for(let i=0; i<allCarouselimgsArray.length; i++){
-      if(allCarouselimgsArray[i].style.display !== 'block'){
-        allCarouselimgsArray[i].style.display = 'block'
-      }else if(allCarouselimgsArray[i].style.display !== 'none'){
-        allCarouselimgsArray[i].style.display = 'none'
-      }
-    }
 
-  })
 
+  //Left button is working!!!
   leftBtn.addEventListener('click', event => {
     for(let i=0; i<allCarouselimgsArray.length; i++){
-      if(allCarouselimgsArray[i].style.display !== 'block'){
+      if(allCarouselimgsArray[i].style.display !== 'block' && allCarouselimgsArray[i+1].style.display !=='none'){
         allCarouselimgsArray[i].style.display = 'block'
-      }else if(allCarouselimgsArray[i].style.display !== 'none'){
+        allCarouselimgsArray[i+1].style.display ='none'
+      }else if(allCarouselimgsArray[i].style.display !== 'none' && allCarouselimgsArray[i+1].style.display !=='block'){
         allCarouselimgsArray[i].style.display = 'none'
+        allCarouselimgsArray[i+1].style.display ='block'
       }
     }
 
   })
 
-
-
-
-
-
-
+  //Right button needs work! :(
+    rightBtn.addEventListener('click', event => {
+      for(let i=0; i<allCarouselimgsArray.length; i++){
+        if(allCarouselimgsArray[i].style.display !== 'block' && allCarouselimgsArray[i+1].style.display !=='none'){
+          allCarouselimgsArray[i].style.display = 'block'
+          allCarouselimgsArray[i+1].style.display ='none'
+        }else if(allCarouselimgsArray[i].style.display !== 'none' && allCarouselimgsArray[i+1].style.display !=='block'){
+          allCarouselimgsArray[i].style.display = 'none'
+          allCarouselimgsArray[i+1].style.display ='block'
+        }
+      }
   
-
-
-
-
-
+    })
 
 
 
