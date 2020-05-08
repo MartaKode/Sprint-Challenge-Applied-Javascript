@@ -89,12 +89,12 @@ function makeCarousel() {
         // }else if(i>=allCarouselimgsArray.length){
         //   i--
         // }
-        if(allCarouselimgsArray[i].style.display !== 'block' && allCarouselimgsArray[i-1].style.display !=='none'){
-          allCarouselimgsArray[i].style.display = 'block'
-          allCarouselimgsArray[i-1].style.display ='none'
-        }else if(allCarouselimgsArray[i].style.display !== 'none' && allCarouselimgsArray[i-1].style.display !=='block'){
-          allCarouselimgsArray[i].style.display = 'none'
-          allCarouselimgsArray[i-1].style.display ='block'
+        if(allCarouselimgsArray[i-1].style.display !== 'block' && allCarouselimgsArray[i].style.display !=='none'){
+          allCarouselimgsArray[i-1].style.display = 'block'
+          allCarouselimgsArray[i].style.display ='none'
+        }else if(allCarouselimgsArray[i-1].style.display !== 'none' && allCarouselimgsArray[i].style.display !=='block'){
+          allCarouselimgsArray[i-1].style.display = 'none'
+          allCarouselimgsArray[i].style.display ='block'
         }
       }
 
